@@ -165,7 +165,7 @@ void idMenuScreen_Shell_Singleplayer::ShowScreen( const mainMenuTransition_t tra
 		option.Append( "#str_01867" );	// load game
 		menuOptions.Append( option );
 		option.Clear();
-		option.Append("Flicksync");	// flicksync
+		option.Append( "#str_swf_vr_flcksync_head" );	// flicksync
 		menuOptions.Append(option);
 
 		int index = 0;
@@ -197,7 +197,7 @@ void idMenuScreen_Shell_Singleplayer::ShowScreen( const mainMenuTransition_t tra
 		option.Append( "#str_01867" );	// load game
 		menuOptions.Append( option );
 		option.Clear();
-		option.Append("Flicksync");	// flicksync
+		option.Append( "#str_swf_vr_flcksync_head" );	// flicksync
 		menuOptions.Append(option);
 
 		if( options != NULL )

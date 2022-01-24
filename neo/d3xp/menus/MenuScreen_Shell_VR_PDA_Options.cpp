@@ -62,7 +62,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR UI Options" );
+	btnBack->SetLabel( "#str_swf_vr_hudmain_head" ); //VR UI Options
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -73,7 +73,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 			
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "PDA Location" );
+	control->SetLabel( "#str_swf_vr_pda_pdalocat" ); //PDA Location
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_PDA_Options::PDA_OPTIONS_FIELD_PDA_MODE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_PDA_Options::PDA_OPTIONS_FIELD_PDA_MODE );
@@ -81,7 +81,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "PDA Position Dist" );
+	control->SetLabel( "#str_swf_vr_pda_pdaposds" ); //PDA Position Dist
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_DISTANCE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_DISTANCE );
@@ -89,7 +89,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "PDA Position Vert" );
+	control->SetLabel( "#str_swf_vr_pda_pdaposvt" ); //PDA Position Vert
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_VERTICAL );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_VERTICAL );
@@ -97,7 +97,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "PDA Position Horiz" );
+	control->SetLabel( "#str_swf_vr_pda_pdaposhz" ); //PDA Position Horiz
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_HORIZONTAL );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_HORIZONTAL );
@@ -105,7 +105,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "PDA Pitch" );
+	control->SetLabel( "#str_swf_vr_pda_pdapitch" ); //PDA Pitch
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_PITCH );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_PDA_Options::PDA_POSITION_OPTIONS_FIELD_PITCH );
@@ -149,7 +149,7 @@ void idMenuScreen_Shell_VR_PDA_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "VR PDA Options" );	
+			heading->SetText( "#str_swf_vr_pda_head" );	//VR PDA Options
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -412,11 +412,11 @@ idSWFScriptVar idMenuScreen_Shell_VR_PDA_Options::idMenuDataSource_Shell_VR_PDA_
 		case PDA_OPTIONS_FIELD_PDA_MODE:
 			if ( vr_PDAfixLocation.GetInteger() == 0 )
 			{
-				return "Hold in Hand";
+				return "#str_swf_vr_pda_pdalocat1"; //Hold in Hand
 			}
 			else
 			{
-				return "Fix In Space";
+				return "#str_swf_vr_pda_pdalocat2"; //Fix In Space
 			}
 
 		case PDA_POSITION_OPTIONS_FIELD_PITCH:

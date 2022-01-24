@@ -59,7 +59,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR OPTIONS" );
+	btnBack->SetLabel( "#str_swf_vr_vroptionsupper" ); // VR OPTIONS
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -69,7 +69,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 	idMenuWidget_ControlButton * control;
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Active Profile" );
+	control->SetLabel( "#str_swf_vr_profile_actvprof" ); //Active Profile
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_USE_OCULUS_PROFILE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_USE_OCULUS_PROFILE );
@@ -77,7 +77,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 	
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Official Profile IPD" );
+	control->SetLabel( "#str_swf_vr_profile_officipd" ); //Official Profile IPD
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Profile_Options::VR_OCULUS_IPD );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Profile_Options::VR_OCULUS_IPD );
@@ -85,7 +85,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Manual Profile IPD");
+	control->SetLabel( "#str_swf_vr_profile_manulipd" ); //Manual Profile IPD
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_IPD);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_IPD);
@@ -94,7 +94,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 #if 0
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Official Profile Height" );
+	control->SetLabel( "#str_swf_vr_profile_offprhgt" ); //Official Profile Height
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Profile_Options::VR_OCULUS_HEIGHT );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Profile_Options::VR_OCULUS_HEIGHT );
@@ -102,7 +102,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Manual Profile Height" );
+	control->SetLabel( "#str_swf_vr_profile_manprhgt" ); //Manual Profile Height
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_HEIGHT );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Profile_Options::VR_PROFILE_HEIGHT );
@@ -146,7 +146,7 @@ void idMenuScreen_Shell_VR_Profile_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "VR Profile Options" );	
+			heading->SetText( "#str_swf_vr_profile_head" );	//VR Profile Options
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -381,9 +381,9 @@ idSWFScriptVar idMenuScreen_Shell_VR_Profile_Options::idMenuDataSource_Shell_VR_
 		
 		case VR_PROFILE_USE_OCULUS_PROFILE:
 			if ( vr_useOculusProfile.GetInteger() == 0 ) {
-				return "Manual Profile";
+				return "#str_swf_vr_profile_actvprof1"; //Manual Profile
 			} else {
-				return "Official Profile";
+				return "#str_swf_vr_profile_actvprof2"; //Official Profile
 			}
 		
 		case VR_OCULUS_IPD:

@@ -62,7 +62,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	btnBack = new (TAG_SWF)idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR HUD Options" );
+	btnBack->SetLabel( "#str_swf_vr_hudmain_head2" ); //VR HUD Options
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -74,7 +74,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "HUD Position Dist" );
+	control->SetLabel( "#str_swf_vr_hudpos_hudpsdst" ); //HUD Position Dist
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_DISTANCE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_DISTANCE );
@@ -82,7 +82,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "HUD Position Vert" );
+	control->SetLabel( "#str_swf_vr_hudpos_hudpsvrt" ); //HUD Position Vert
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_VERTICAL );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_VERTICAL );
@@ -90,7 +90,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "HUD Position Horiz" );
+	control->SetLabel( "#str_swf_vr_hudpos_hudpshrz" ); //HUD Position Horiz
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_HORIZONTAL );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_HORIZONTAL );
@@ -98,7 +98,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "HUD Pitch" );
+	control->SetLabel( "#str_swf_vr_hudpos_hudpitch" ); //HUD Pitch
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_PITCH );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_PITCH );
@@ -106,7 +106,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "HUD Scale" );
+	control->SetLabel( "#str_swf_vr_hudpos_hudscale" ); //HUD Scale
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_SCALE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_SCALE );
@@ -114,7 +114,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Initialize( idMenuHandler * dat
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Talk Cursor Adj" );
+	control->SetLabel( "#str_swf_vr_hudpos_talkcura" ); //Talk Cursor Adj
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_TALK_CURSOR );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_HUD_Position_Options::HUD_POSITION_OPTIONS_FIELD_TALK_CURSOR );
@@ -157,7 +157,7 @@ void idMenuScreen_Shell_VR_HUD_Position_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "VR HUD Pos Options" );
+			heading->SetText( "#str_swf_vr_hudpos_head" ); //VR HUD Pos Options
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 

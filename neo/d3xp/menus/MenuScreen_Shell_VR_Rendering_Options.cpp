@@ -63,7 +63,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR OPTIONS" );
+	btnBack->SetLabel( "#str_swf_vr_vroptionsupper" ); // VR OPTIONS
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -73,7 +73,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 	idMenuWidget_ControlButton * control;
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Pixel Density" ); // Enable VR mode
+	control->SetLabel( "#str_swf_vr_render_pxldenst" ); //Pixel Density, Enable VR mode
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_PIXEL_DENSITY );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_PIXEL_DENSITY );
@@ -81,7 +81,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "MSAA level" );// % value to increase/decrease FBO size (for downscaling/antialiasing)
+	control->SetLabel( "#str_swf_vr_render_msaa" );//MSAA level, % value to increase/decrease FBO size (for downscaling/antialiasing)
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_MSAALEVEL );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_MSAALEVEL );
@@ -89,7 +89,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Asynchronous SpaceWarp" ); // Asynchronous SpaceWarp
+	control->SetLabel( "#str_swf_vr_render_asycspwp" ); //Asynchronous SpaceWarp
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_ASW );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_ASW );
@@ -97,7 +97,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "3D Guis" ); // Antialiasing
+	control->SetLabel( "#str_swf_vr_render_3dguis" ); //3D Guis, Antialiasing
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_3DGUIS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_3DGUIS );
@@ -105,7 +105,7 @@ void idMenuScreen_Shell_VR_Rendering_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Chaperone");
+	control->SetLabel( "#str_swf_vr_render_chaperon" ); //Chaperone
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_CHAPERONE);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Rendering_Options::RENDERING_OPTIONS_FIELD_CHAPERONE);
@@ -148,8 +148,8 @@ void idMenuScreen_Shell_VR_Rendering_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			//heading->SetText( "VR Rendering Options" );	
-			heading->SetText( "SETTINGS" );
+			//heading->SetText( "#str_swf_vr_render_head" );	//VR Rendering Options
+			heading->SetText( "#str_swf_settings" );
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -438,7 +438,7 @@ idSWFScriptVar idMenuScreen_Shell_VR_Rendering_Options::idMenuDataSource_Shell_V
 		}
 
 		case RENDERING_OPTIONS_FIELD_ASW: {
-			const char* s[5] = { "#str_swf_disabled", "Default", "#str_swf_enabled", "45 FPS ATW", "45 FPS ASW" };
+			const char* s[5] = { "#str_swf_vr_render_asycspwp1", "#str_swf_vr_render_asycspwp2", "#str_swf_vr_render_asycspwp3", "#str_swf_vr_render_asycspwp4", "#str_swf_vr_render_asycspwp5" }; //"Disabled", "Default", "Enabled", "45 FPS ATW", "45 FPS ASW"
 			if (vr_asw.GetInteger() > 3)
 				return "error";
 			else
@@ -447,7 +447,7 @@ idSWFScriptVar idMenuScreen_Shell_VR_Rendering_Options::idMenuDataSource_Shell_V
 
 		case RENDERING_OPTIONS_FIELD_CHAPERONE:
 		{
-			const char* names[] = { "Near", "Throwing", "Melee", "Dodging", "Always" };
+			const char* names[] = { "#str_swf_vr_render_chaperon1", "#str_swf_vr_render_chaperon2", "#str_swf_vr_render_chaperon3", "#str_swf_vr_render_chaperon4", "#str_swf_vr_render_chaperon5" }; //"Near", "Throwing", "Melee", "Dodging", "Always"
 			return names[vr_chaperone.GetInteger()];
 		}
 

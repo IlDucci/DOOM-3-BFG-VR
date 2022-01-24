@@ -62,7 +62,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR Options" ); // #str_swf_settings
+	btnBack->SetLabel( "#str_swf_vr_vroptionstitle" ); // VR Options
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -73,7 +73,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 		
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_BUTTON_TEXT );
-	control->SetLabel( "HUD Options" );
+	control->SetLabel( "#str_swf_vr_ui_hudoptns" ); //HUD Options
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HUD_OPTIONS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HUD_OPTIONS );
@@ -81,7 +81,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 	
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_BUTTON_TEXT );
-	control->SetLabel( "PDA Options" );
+	control->SetLabel( "#str_swf_vr_ui_pdaoptns" ); //PDA Options
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_PDA_OPTIONS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_PDA_OPTIONS );
@@ -89,7 +89,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Heading Beam" );
+	control->SetLabel( "#str_swf_vr_ui_headbeam" ); //Heading Beam
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HEADING_BEAM );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HEADING_BEAM );
@@ -97,7 +97,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Weapon Sight" );
+	control->SetLabel( "#str_swf_vr_ui_weapsght" ); //Weapon Sight
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_WEAPON_SIGHT );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_WEAPON_SIGHT );
@@ -105,7 +105,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Sight to Surface" );
+	control->SetLabel( "#str_swf_vr_ui_sghtsurf" ); //Sight to Surface
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_SIGHT_TO_SURFACE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_SIGHT_TO_SURFACE );
@@ -113,7 +113,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Laser Sight Source");
+	control->SetLabel( "#str_swf_vr_ui_lasrssrc" ); //Laser Sight Source
 	control->SetDataSource(&systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_LASER_SOURCE);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_LASER_SOURCE);
@@ -121,7 +121,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Haptic Feedback" );
+	control->SetLabel( "#str_swf_vr_ui_hapticfb" ); //Haptic Feedback
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HAPTICS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_HAPTICS );
@@ -129,7 +129,7 @@ void idMenuScreen_Shell_VR_UI_Options::Initialize( idMenuHandler * data ) {
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Gui Mode" );
+	control->SetLabel( "#str_swf_vr_ui_guimode" ); //Gui Mode
 	control->SetDataSource( &systemData, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_GUI_MODE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_VR_UI_Options::UI_OPTIONS_FIELD_GUI_MODE );
@@ -172,7 +172,7 @@ void idMenuScreen_Shell_VR_UI_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "UI Options" );	
+			heading->SetText( "#str_swf_vr_ui_head" );	//UI Options
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -435,19 +435,19 @@ idSWFScriptVar idMenuScreen_Shell_VR_UI_Options::idMenuDataSource_VR_UI_Options:
 			const int hb = vr_headingBeamMode.GetInteger();
 			if ( hb == 0 )
 			{
-				return "DISABLED";
+				return "#str_swf_vr_ui_headbeam1"; //Disabled
 			}
 			if ( hb == 1 )
 			{
-				return "Solid";
+				return "#str_swf_vr_ui_headbeam2"; //Solid
 			}
 			if ( hb == 2 )
 			{
-				return "Arrows";
+				return "#str_swf_vr_ui_headbeam3"; //Arrows
 			}
 			if ( hb == 3 )
 			{
-				return "Scrolling Arrows";
+				return "#str_swf_vr_ui_headbeam4"; //Scrolling Arrows
 			}
 		}
 		
@@ -457,35 +457,35 @@ idSWFScriptVar idMenuScreen_Shell_VR_UI_Options::idMenuDataSource_VR_UI_Options:
 			
 			if ( ws == -1 )
 			{
-				return "Disabled";
+				return "#str_swf_vr_ui_weapsght1"; //Disabled
 			}
 			if ( ws == 0 )
 			{
-				return "Laser Beam";
+				return "#str_swf_vr_ui_weapsght2"; //Laser Beam
 			}
 			if ( ws == 1 )
 			{
-				return "Red Dot";
+				return "#str_swf_vr_ui_weapsght3"; //Red Dot
 			}
 			if ( ws == 2 )
 			{
-				return "Circle Dot";
+				return "#str_swf_vr_ui_weapsght4"; //Circle Dot
 			}
 			if ( ws == 3 )
 			{
-				return "Crosshair";
+				return "#str_swf_vr_ui_weapsght5"; //Crosshair
 			}
 			if ( ws == 4 )
 			{
-				return "Laser + Dot";
+				return "#str_swf_vr_ui_weapsght6"; //Laser + Dot
 			}
 			if ( ws == 5 )
 			{
-				return "Laser + Circle";
+				return "#str_swf_vr_ui_weapsght7"; //Laser + Circle
 			}
 			if ( ws == 6 )
 			{
-				return "Laser + Cross";
+				return "#str_swf_vr_ui_weapsght8"; //Laser + Cross
 			}
 		}
 		case UI_OPTIONS_FIELD_SIGHT_TO_SURFACE:
@@ -496,10 +496,10 @@ idSWFScriptVar idMenuScreen_Shell_VR_UI_Options::idMenuDataSource_VR_UI_Options:
 			}
 		case UI_OPTIONS_FIELD_LASER_SOURCE:
 			if (vr_laserSightUseOffset.GetBool()) {
-				return "Laser Emitter";
+				return "#str_swf_vr_ui_lasrssrc1"; //Laser Emitter
 			}
 			else {
-				return "Barrel";
+				return "#str_swf_vr_ui_lasrssrc2"; //Barrel
 			}
 
 		case UI_OPTIONS_FIELD_HAPTICS:
@@ -515,17 +515,17 @@ idSWFScriptVar idMenuScreen_Shell_VR_UI_Options::idMenuDataSource_VR_UI_Options:
 			const int gm = vr_guiMode.GetInteger();
 			if ( gm == 2 )
 			{
-				return "Touch Activated";
+				return "#str_swf_vr_ui_guimode1"; //Touch Activated
 			}
 
 			if ( gm == 1 )
 			{
-				return "Look Activated";
+				return "#str_swf_vr_ui_guimode2"; //Look Activated
 			}
 
 			if ( gm == 0 )
 			{
-				return "Aim Activated";
+				return "#str_swf_vr_ui_guimode3"; //Aim Activated
 			}
 
 		}

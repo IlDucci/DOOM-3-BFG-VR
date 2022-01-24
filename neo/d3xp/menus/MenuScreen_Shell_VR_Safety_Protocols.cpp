@@ -58,7 +58,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR Options" );
+	btnBack->SetLabel( "#str_swf_vr_vroptionstitle" ); // VR Options
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -69,7 +69,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 	
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Teleport" );
+	control->SetLabel( "#str_swf_vr_safety_teleport" ); //Teleport
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_TELEPORTATION );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_TELEPORTATION );
@@ -77,7 +77,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Teleport Mode");
+	control->SetLabel( "#str_swf_vr_safety_tlprtmod" ); //Teleport Mode
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_TELEPORTATION_MODE);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_TELEPORTATION_MODE);
@@ -85,7 +85,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Turning" );
+	control->SetLabel( "#str_swf_vr_safety_turning" ); //Turning
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_SNAP_TURNS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_SNAP_TURNS );
@@ -93,7 +93,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("JetStrafe Turning");
+	control->SetLabel( "#str_swf_vr_safety_jetsttrn" ); //JetStrafe Turning
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_JET_SNAP_TURNS);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_JET_SNAP_TURNS);
@@ -101,7 +101,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Walk Speed Adj" );
+	control->SetLabel( "#str_swf_vr_safety_wlkspadj" ); //Walk Speed Adj
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_WALK_SPEED_ADJUST );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_WALK_SPEED_ADJUST );
@@ -109,7 +109,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Motion Sickness Aid" );
+	control->SetLabel( "#str_swf_vr_safety_motsika" ); //Motion Sickness Aid
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_MOTION_SICKNESS );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_MOTION_SICKNESS );
@@ -117,7 +117,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "KnockBack & Head Kick" );
+	control->SetLabel( "#str_swf_vr_safety_knokback" ); //KnockBack & Head Kick
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_KNOCKBACK );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_KNOCKBACK );
@@ -125,7 +125,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Step Smooth & Jump Bounce" );
+	control->SetLabel( "#str_swf_vr_safety_stsmjbnc" ); //Step Smooth & Jump Bounce
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_HEADBOB );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_HEADBOB );
@@ -134,7 +134,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Initialize( idMenuHandler * data ) 
 	
 	control = new(TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_BAR );
-	control->SetLabel( "Shake Amplitude" );	// Brightness
+	control->SetLabel( "#str_swf_vr_safety_shkamplt" );	//Shake Amplitude
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_SHAKE_AMPLITUDE );
 	control->SetupEvents( 2, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Safety_Protocols::SAFETY_PROTOCOLS_FIELD_SHAKE_AMPLITUDE );
@@ -178,7 +178,7 @@ void idMenuScreen_Shell_VR_Safety_Protocols::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "VR Comfort + Safety" );
+			heading->SetText( "#str_swf_vr_safety_head" ); //VR Comfort + Safety
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -560,13 +560,13 @@ idSWFScriptVar idMenuScreen_Shell_VR_Safety_Protocols::idMenuDataSource_Shell_VR
 	
 		case SAFETY_PROTOCOLS_FIELD_TELEPORTATION:
 		{
-			const char* names[] = { "Disabled", "Gun Sight", "Right Hand", "Left Hand", "Head" };
+			const char* names[] = { "#str_swf_vr_safety_teleport1", "#str_swf_vr_safety_teleport2", "#str_swf_vr_safety_teleport3", "#str_swf_vr_safety_teleport4", "#str_swf_vr_safety_teleport5" }; //"Disabled", "Gun Sight", "Right Hand", "Left Hand", "Head"
 			return names[vr_teleport.GetInteger()];
 		}
 
 		case SAFETY_PROTOCOLS_FIELD_TELEPORTATION_MODE:
 		{
-			const char* names[] = { "Blink", "Doom VFR", "Doom VFR + JetStrafe"};
+			const char* names[] = { "#str_swf_vr_safety_tlprtmod1", "#str_swf_vr_safety_tlprtmod2", "#str_swf_vr_safety_tlprtmod3" }; //"Blink", "Doom VFR", "Doom VFR + JetStrafe"
 			return names[vr_teleportMode.GetInteger()];
 		}
 
@@ -587,11 +587,11 @@ idSWFScriptVar idMenuScreen_Shell_VR_Safety_Protocols::idMenuDataSource_Shell_VR
 			}
 
 			if (f < 0.5f || (analogCount==0 && comfortCount==0))
-				return "Real Life"; 
+				return "#str_swf_vr_safety_turning1"; //Real Life
 			if ( analogCount >= comfortCount )
-				return "Analog";
+				return "#str_swf_vr_safety_turning2"; //Analog
 			else
-				return va( "Snap %.0f degrees", f );
+				return va( "Snap %.0f degrees", f ); //VR MOD, STR NAME ASSIGNED: #str_swf_vr_safety_turning3; NEEDS ADDITIONAL CODE
 		}	
 
 		case SAFETY_PROTOCOLS_FIELD_JET_SNAP_TURNS:
@@ -599,11 +599,11 @@ idSWFScriptVar idMenuScreen_Shell_VR_Safety_Protocols::idMenuDataSource_Shell_VR
 			float f = vr_comfortJetStrafeDelta.GetFloat();
 
 			if (f < 0.5f)
-				return "Real Life";
+				return "#str_swf_vr_safety_turning1"; //Real Life
 			if (f == 1.0f)
-				return "Analog";
+				return "#str_swf_vr_safety_turning2"; //Analog
 			else
-				return va("Snap %.0f degrees", f);
+				return va("Snap %.0f degrees", f); //VR MOD, STR NAME ASSIGNED: #str_swf_vr_safety_turning3; NEEDS ADDITIONAL CODE
 		}
 
 		case SAFETY_PROTOCOLS_FIELD_WALK_SPEED_ADJUST:
@@ -611,32 +611,32 @@ idSWFScriptVar idMenuScreen_Shell_VR_Safety_Protocols::idMenuDataSource_Shell_VR
 
 		case SAFETY_PROTOCOLS_FIELD_MOTION_SICKNESS:
 		{
-			const char* names[] = { "None", "Chaperone", "Reduce FOV", "Black Screen", "Black + Chaperone", "FOV + Chaperone", "Slow Mo", "Slow Mo + Chaperone", "Slow Mo + FOV", "Slow+FOV+Chaperone", "Third Person", "Particles", "Particles & Chaperone" };
+			const char* names[] = { "#str_swf_vr_safety_motsika01", "#str_swf_vr_safety_motsika02", "#str_swf_vr_safety_motsika03", "#str_swf_vr_safety_motsika04", "#str_swf_vr_safety_motsika05", "#str_swf_vr_safety_motsika06", "#str_swf_vr_safety_motsika07", "#str_swf_vr_safety_motsika08", "#str_swf_vr_safety_motsika09", "#str_swf_vr_safety_motsika10", "#str_swf_vr_safety_motsika11", "#str_swf_vr_safety_motsika12", "#str_swf_vr_safety_motsika13" }; //"None", "Chaperone", "Reduce FOV", "Black Screen", "Black + Chaperone", "FOV + Chaperone", "Slow Mo", "Slow Mo + Chaperone", "Slow Mo + FOV", "Slow+FOV+Chaperone", "Third Person", "Particles", "Particles & Chaperone"
 			return names[vr_motionSickness.GetInteger()];
 		}
 
 		case SAFETY_PROTOCOLS_FIELD_KNOCKBACK:
 		{
 			if ( !vr_knockBack.GetBool() && !vr_headKick.GetBool() )
-				return "#str_swf_disabled";
+				return "#str_swf_vr_safety_knokback1"; //Disabled
 			else if ( vr_knockBack.GetBool() && vr_headKick.GetBool() )
-				return "#str_swf_enabled";
+				return "#str_swf_vr_safety_knokback2"; //Enabled
 			else if ( vr_knockBack.GetBool() )
-				return "KnockBack only";
+				return "#str_swf_vr_safety_knokback3"; //KnockBack only
 			else if ( vr_headKick.GetBool() )
-				return "HeadKick only";
+				return "#str_swf_vr_safety_knokback4"; //HeadKick only
 		}
 
 		case SAFETY_PROTOCOLS_FIELD_HEADBOB:
 		{
 			if ( !vr_stepSmooth.GetFloat() && !vr_jumpBounce.GetFloat() )
-				return "#str_swf_disabled";
+				return "#str_swf_vr_safety_stsmjbnc1"; //Disabled
 			else if ( vr_stepSmooth.GetFloat() && vr_jumpBounce.GetFloat() )
-				return "#str_swf_enabled";
+				return "#str_swf_vr_safety_stsmjbnc2"; //Enabled
 			else if ( vr_stepSmooth.GetFloat() )
-				return "Step Smooth only";
+				return "#str_swf_vr_safety_stsmjbnc3"; //Step Smooth only
 			else if ( vr_jumpBounce.GetFloat() )
-				return "Jump Bounce only";
+				return "#str_swf_vr_safety_stsmjbnc3"; //Jump Bounce only
 		}
 
 		case SAFETY_PROTOCOLS_FIELD_SHAKE_AMPLITUDE:

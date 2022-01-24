@@ -58,22 +58,22 @@ void idMenuScreen_Shell_VR_Settings::Initialize( idMenuHandler * data ) {
 	idList< idList< idStr, TAG_IDLIB_LIST_MENU >, TAG_IDLIB_LIST_MENU > menuOptions;	
 	idList< idStr > option;
 
-	option.Append( "Character Options" );	
+	option.Append( "#str_swf_vr_main_chara" ); //Character Options
 	menuOptions.Append( option );
 	option.Clear();
-	option.Append( "Comfort Options" );
+	option.Append( "#str_swf_vr_main_comfort" ); //Comfort Options
 	menuOptions.Append( option );
 	option.Clear();
-	option.Append( "Control Options" );
+	option.Append( "#str_swf_vr_main_control" ); //Control Options
 	menuOptions.Append( option );
 	option.Clear();
-	option.Append( "UI Options" );
+	option.Append( "#str_swf_vr_main_ui" ); //UI Options
 	menuOptions.Append( option );
 	option.Clear();
-	option.Append( "Rendering Options" );
+	option.Append( "#str_swf_vr_main_render" ); //Rendering Options
 	menuOptions.Append( option );
 	option.Clear();
-	option.Append( "Profile Options" );
+	option.Append( "#str_swf_vr_main_profile" ); //Profile Options
 	menuOptions.Append( option );
 	option.Clear();
 		
@@ -87,7 +87,7 @@ void idMenuScreen_Shell_VR_Settings::Initialize( idMenuHandler * data ) {
 	helpWidget->SetSpritePath( GetSpritePath(), "info", "helpTooltip" );
 	AddChild( helpWidget );
 
-	const char * tips[] = { "Character Options.", "Comfort & Safety Options.", "Control Options.", "UI Options.", "Rendering Options.", "Profile Options" };
+	const char * tips[] = { "#str_swf_vr_main_chara_hint", "#str_swf_vr_main_comfort_hint", "#str_swf_vr_main_control_hint", "#str_swf_vr_main_ui_hint", "#str_swf_vr_main_render_hint", "#str_swf_vr_main_profile_hint" }; //"Character Options.", "Comfort & Safety Options.", "Control Options.", "UI Options.", "Rendering Options.", "Profile Options"
 
 	while ( options->GetChildren().Num() < NUM_SETTING_OPTIONS ) {
 		idMenuWidget_Button * const buttonWidget = new (TAG_SWF) idMenuWidget_Button();
@@ -161,7 +161,7 @@ void idMenuScreen_Shell_VR_Settings::Update() {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
 			//heading->SetText( "#str_swf_settings" );
-			heading->SetText( "VR OPTIONS" );
+			heading->SetText( "#str_swf_vr_vroptionsupper" ); // VR OPTIONS
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 

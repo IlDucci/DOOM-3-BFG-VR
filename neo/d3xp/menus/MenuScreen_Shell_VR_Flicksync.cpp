@@ -58,7 +58,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	btnBack = new (TAG_SWF)idMenuWidget_Button();
 	btnBack->Initialize(data);
-	btnBack->SetLabel("Campaign");
+	btnBack->SetLabel("#str_swf_vr_flcksync_campaign"); //Campaign
 	btnBack->SetSpritePath(GetSpritePath(), "info", "btnBack");
 	btnBack->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_GO_BACK);
 
@@ -69,7 +69,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Character");
+	control->SetLabel("#str_swf_vr_flcksync_chara"); //Character
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_CHARACTER);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_CHARACTER);
@@ -77,7 +77,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Cue Cards");
+	control->SetLabel("#str_swf_vr_flcksync_cuecards"); //Cue Cards
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_CUECARDS);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_CUECARDS);
@@ -85,7 +85,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Game Type");
+	control->SetLabel("#str_swf_vr_flcksync_gametype"); //Game Type
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_GAMETYPE);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_GAMETYPE);
@@ -93,7 +93,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Which Scenes");
+	control->SetLabel("#str_swf_vr_flcksync_whichsce"); //Which Scenes
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_MINEONLY);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_MINEONLY);
@@ -101,7 +101,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("No Spoilers After");
+	control->SetLabel("#str_swf_vr_flcksync_nospoila"); //No Spoilers After
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_SPOILER);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_SPOILER);
@@ -109,7 +109,7 @@ void idMenuScreen_Shell_VR_Flicksync::Initialize( idMenuHandler* data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_BUTTON_TEXT);
-	control->SetLabel("Play");
+	control->SetLabel("#str_swf_vr_flcksync_play"); //Play
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_NEWGAME);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Flicksync::FLICKSYNC_FIELD_NEWGAME);
@@ -152,7 +152,7 @@ void idMenuScreen_Shell_VR_Flicksync::Update()
 	if (BindSprite(root)) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText("info", "txtHeading");
 		if (heading != NULL) {
-			heading->SetText("Flicksync");
+			heading->SetText("#str_swf_vr_flcksync_head"); //Flicksync
 			heading->SetStrokeInfo(true, 0.75f, 1.75f);
 		}
 
@@ -499,73 +499,73 @@ idSWFScriptVar idMenuScreen_Shell_VR_Flicksync::idMenuDataSource_Shell_VR_Flicks
 
 	case FLICKSYNC_FIELD_CHARACTER:
 	{
-		const char* names[] = { "None", "Dr. Betruger", "Elliot Swann", "Jack Campbell", "Darkstar", "S.L. Medley (Tower)", "Reception", "Sergeant Kelly", "Brooks (Mars Sec)", "Mark Ryan (airlock)", "Scientists", "Roland (ceiling)", "Dr. Elizabeth McNeil", "Marine with PDA", "Marine with Torch", "Point (explosives)", "Bravo Lead", "Player" };
+		const char* names[] = { "#str_swf_vr_flcksync_chara01", "#str_swf_vr_flcksync_chara02", "#str_swf_vr_flcksync_chara03", "#str_swf_vr_flcksync_chara04", "#str_swf_vr_flcksync_chara05", "#str_swf_vr_flcksync_chara06", "#str_swf_vr_flcksync_chara07", "#str_swf_vr_flcksync_chara08", "#str_swf_vr_flcksync_chara09", "#str_swf_vr_flcksync_chara10", "#str_swf_vr_flcksync_chara11", "#str_swf_vr_flcksync_chara12", "#str_swf_vr_flcksync_chara13", "#str_swf_vr_flcksync_chara14", "#str_swf_vr_flcksync_chara15", "#str_swf_vr_flcksync_chara16", "#str_swf_vr_flcksync_chara17", "#str_swf_vr_flcksync_chara18" }; //"None", "Dr. Betruger", "Elliot Swann", "Jack Campbell", "Darkstar", "S.L. Medley (Tower)", "Receptionist", "Sergeant Kelly", "Brooks (Mars Sec)", "Mark Ryan (airlock)", "Scientists", "Roland (ceiling)", "Dr. Elizabeth McNeil", "Marine with PDA", "Marine with Torch", "Point (explosives)", "Bravo Lead", "Player"
 		return names[vr_flicksyncCharacter.GetInteger()];
 	}
 	case FLICKSYNC_FIELD_CUECARDS:
 	{
-		const char* names[] = { "0 (default)", "1", "2", "3", "4", "5" };
+		const char* names[] = { "#str_swf_vr_flcksync_cuecards1", "1", "2", "3", "4", "5" }; //0 (default)
 		return names[vr_flicksyncCueCards.GetInteger()];
 	}
 	case FLICKSYNC_FIELD_GAMETYPE:
 	{
-		const char* names[] = { "Cutscenes + Game", "Cutscenes Only", "No Cutscenes" };
+		const char* names[] = { "#str_swf_vr_flcksync_gametype1", "#str_swf_vr_flcksync_gametype2", "#str_swf_vr_flcksync_gametype3" }; //"Cutscenes + Game", "Cutscenes Only", "No Cutscenes"
 		return names[vr_cutscenesOnly.GetInteger()];
 	}
 	case FLICKSYNC_FIELD_MINEONLY:
 	{
-		const char* names[] = { "All Scenes", "My Chapter", "From My Start", "My Storyline", "My Scenes Only" };
+		const char* names[] = { "#str_swf_vr_flcksync_whichsce1", "#str_swf_vr_flcksync_whichsce2", "#str_swf_vr_flcksync_whichsce3", "#str_swf_vr_flcksync_whichsce4", "#str_swf_vr_flcksync_whichsce5" }; //"All Scenes", "My Chapter", "From My Start", "My Storyline", "My Scenes Only"
 		return names[vr_flicksyncScenes.GetInteger()];
 	}
 	case FLICKSYNC_FIELD_SPOILER:
 	{
 		int n = vr_flicksyncSpoiler.GetInteger();
 		if (n == 0)
-			return "Allow Spoilers";
+			return "#str_swf_vr_flcksync_nospoila01"; //Allow Spoilers
 		if (n <= ACTING_GEARUP)
-			return "Mars City 1";
+			return "#str_swf_vr_flcksync_nospoila02"; //Mars City 1
 		if (n <= CUTSCENE_ADMIN)
-			return "Mars City 2";
+			return "#str_swf_vr_flcksync_nospoila03"; //Mars City 2
 		if (n <= CUTSCENE_ALPHALABS1)
-			return "Admin";
+			return "#str_swf_vr_flcksync_nospoila04"; //Admin
 		if (n <= CUTSCENE_VAGARY)
-			return "Alpha Labs 1";
+			return "#str_swf_vr_flcksync_nospoila05"; //Alpha Labs 1
 		if (n <= CUTSCENE_ENPRO)
-			return "Alpha Labs 4";
+			return "#str_swf_vr_flcksync_nospoila06"; //Alpha Labs 4
 		if (n <= CUTSCENE_REVINTRO)
-			return "Enpro";
+			return "#str_swf_vr_flcksync_nospoila07"; //Enpro
 		if (n <= CUTSCENE_MANCINTRO)
-			return "Recycling 1";
+			return "#str_swf_vr_flcksync_nospoila08"; //Recycling 1
 		if (n <= CUTSCENE_MONORAIL_RAISE_COMMANDO)
-			return "Recycling 2";
+			return "#str_swf_vr_flcksync_nospoila09"; //Recycling 2
 		if (n <= CUTSCENE_DELTA_SCIENTIST)
-			return "Monorail";
+			return "#str_swf_vr_flcksync_nospoila10"; //Monorail
 		if (n <= CUTSCENE_DELTA_HKINTRO)
-			return "Delta Labs 2";
+			return "#str_swf_vr_flcksync_nospoila11"; //Delta Labs 2
 		if (n <= CUTSCENE_GUARDIAN_INTRO)
-			return "Delta Labs 4";
+			return "#str_swf_vr_flcksync_nospoila12"; //Delta Labs 4
 		if (n <= CUTSCENE_CAMPHUNT)
-			return "Hell 1";
+			return "#str_swf_vr_flcksync_nospoila13"; //Hell 1
 		if (n <= CUTSCENE_CPU_BOSS)
-			return "CPU";
+			return "#str_swf_vr_flcksync_nospoila14"; //CPU
 		if (n <= CUTSCENE_CYBERDEMON)
-			return "CPU Boss";
+			return "#str_swf_vr_flcksync_nospoila15"; //CPU Boss
 		if (n <= FMV_ROE)
-			return "Doom 3 Complete";
+			return "#str_swf_vr_flcksync_nospoila16"; //Doom 3 Complete
 		if (n <= CUTSCENE_VULGARINTRO)
-			return "RoE: Erebus 1";
+			return "#str_swf_vr_flcksync_nospoila17"; //RoE: Erebus 1
 		if (n <= CUTSCENE_CLOUD)
-			return "RoE: Erebus 2";
+			return "#str_swf_vr_flcksync_nospoila18"; //RoE: Erebus 2
 		if (n <= CUTSCENE_EREBUS6_MONSTERS)
-			return "RoE: Erebus 5";
+			return "#str_swf_vr_flcksync_nospoila19"; //RoE: Erebus 5
 				if (n <= CUTSCENE_PHOBOS2)
-			return "RoE: Erebus 6";
+			return "#str_swf_vr_flcksync_nospoila20"; //RoE: Erebus 6
 		if (n <= CUTSCENE_HELL_MALEDICT)
-			return "RoE: Phobos 2";
+			return "#str_swf_vr_flcksync_nospoila21"; //RoE: Phobos 2
 		if (n <= FMV_LOST_MISSIONS)
-			return "RoE: Hell";
+			return "#str_swf_vr_flcksync_nospoila22"; //RoE: Hell
 		else
-			return "LE: Enpro 1";
+			return "#str_swf_vr_flcksync_nospoila23"; //LE: Enpro 1
 	}
 	}
 	return false;

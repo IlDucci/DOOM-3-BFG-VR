@@ -58,7 +58,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	btnBack = new (TAG_SWF) idMenuWidget_Button();
 	btnBack->Initialize( data );
-	btnBack->SetLabel( "VR Options" );
+	btnBack->SetLabel( "#str_swf_vr_vroptionstitle" ); // VR Options
 	btnBack->SetSpritePath( GetSpritePath(), "info", "btnBack" );
 	btnBack->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_GO_BACK );
 
@@ -69,7 +69,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 	
 	control = new (TAG_SWF) idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Body Mode" );
+	control->SetLabel( "#str_swf_vr_character_bodymode" );
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_BODY_MODE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_BODY_MODE );
@@ -77,7 +77,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Flashlight Mount" );
+	control->SetLabel( "#str_swf_vr_character_flashmnt" );
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_FLASH_MODE );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_FLASH_MODE );
@@ -85,7 +85,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Weapon Hand" );
+	control->SetLabel( "#str_swf_vr_character_weaphand" );
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_WEAPON_HAND );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction( WIDGET_EVENT_PRESS ).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_WEAPON_HAND );
@@ -93,7 +93,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Holster Slots");
+	control->SetLabel("#str_swf_vr_character_holsterslots");
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_HOLSTER_SLOTS);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_HOLSTER_SLOTS);
@@ -101,7 +101,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType( OPTION_SLIDER_TEXT );
-	control->SetLabel( "Use Height" );
+	control->SetLabel( "#str_swf_vr_character_useheght" );
 	control->SetDataSource( &systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_USE_FLOOR_HEIGHT );
 	control->SetupEvents( DEFAULT_REPEAT_TIME, options->GetChildren().Num() );
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set( WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_USE_FLOOR_HEIGHT );
@@ -109,7 +109,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("Custom Eye Height");
+	control->SetLabel("#str_swf_vr_character_cstmeyeh");
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_VIEW_HEIGHT);
 	control->SetupEvents(DEFAULT_REPEAT_TIME, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_VIEW_HEIGHT);
@@ -117,7 +117,7 @@ void idMenuScreen_Shell_VR_Character_Options::Initialize( idMenuHandler * data )
 
 	control = new (TAG_SWF)idMenuWidget_ControlButton();
 	control->SetOptionType(OPTION_SLIDER_TEXT);
-	control->SetLabel("World Scale Adjust");
+	control->SetLabel("#str_swf_vr_character_wrldscal");
 	control->SetDataSource(&systemData, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_SCALE);
 	control->SetupEvents(2, options->GetChildren().Num());
 	control->AddEventAction(WIDGET_EVENT_PRESS).Set(WIDGET_ACTION_COMMAND, idMenuDataSource_Shell_VR_Character_Options::CHARACTER_OPTIONS_FIELD_SCALE);
@@ -160,7 +160,7 @@ void idMenuScreen_Shell_VR_Character_Options::Update() {
 	if ( BindSprite( root ) ) {
 		idSWFTextInstance * heading = GetSprite()->GetScriptObject()->GetNestedText( "info", "txtHeading" );
 		if ( heading != NULL ) {
-			heading->SetText( "VR Character Options" );	
+			heading->SetText( "#str_swf_vr_character_head" );	//VR Character Options
 			heading->SetStrokeInfo( true, 0.75f, 1.75f );
 		}
 
@@ -439,17 +439,17 @@ idSWFScriptVar idMenuScreen_Shell_VR_Character_Options::idMenuDataSource_Shell_V
 
 			if ( bm == 0 )
 			{
-				return "Full Body + Arms";
+				return "#str_swf_vr_character_bodymode1"; //Full Body + Arms
 			}
 
 			if ( bm == 1 )
 			{
-				return "Hands + Weaps";
+				return "#str_swf_vr_character_bodymode2"; //Hands + Weaps
 			}
 
 			if ( bm == 2 )
 			{
-				return "Weapons Only";
+				return "#str_swf_vr_character_bodymode3"; //Weapons Only
 			}
 		}
 			
@@ -460,22 +460,22 @@ idSWFScriptVar idMenuScreen_Shell_VR_Character_Options::idMenuDataSource_Shell_V
 
 			if ( fm == 0 )
 			{
-				return "Body";
+				return "#str_swf_vr_character_flashmnt1"; //Body
 			}
 
 			if ( fm == 1 )
 			{
-				return "Head";
+				return "#str_swf_vr_character_flashmnt2"; //Head
 			}
 
 			if ( fm == 2 )
 			{
-				return "Weapon";
+				return "#str_swf_vr_character_flashmnt3"; //Weapon
 			}
 
 			if ( fm == 3 )
 			{
-				return "Hand";
+				return "#str_swf_vr_character_flashmnt4"; //Hand
 			}
 
 		}
@@ -484,11 +484,11 @@ idSWFScriptVar idMenuScreen_Shell_VR_Character_Options::idMenuDataSource_Shell_V
 		{
 			if ( vr_weaponHand.GetInteger() == 0 ) 
 			{
-				return "Right Hand";
+				return "#str_swf_vr_character_weaphand1"; //Right Hand
 			}
 			else
 			{
-				return "Left Hand";
+				return "#str_swf_vr_character_weaphand2"; //Left Hand
 			}
 		}
 		
@@ -513,23 +513,23 @@ idSWFScriptVar idMenuScreen_Shell_VR_Character_Options::idMenuDataSource_Shell_V
 		{
 			if (vr_useFloorHeight.GetInteger() == 1)
 			{
-				return "Marine eye height";
+				return "#str_swf_vr_character_useheght1"; //Marine Eye Height
 			}
 			else if (vr_useFloorHeight.GetInteger() == 2)
 			{
-				return "Normal view height";
+				return "#str_swf_vr_character_useheght2"; //Normal View Height
 			}
 			else if (vr_useFloorHeight.GetInteger() == 3)
 			{
-				return "Crouch to your height";
+				return "#str_swf_vr_character_useheght3"; //Crouch To Your Height
 			}
 			else if (vr_useFloorHeight.GetInteger() == 4)
 			{
-				return "Scale to your height";
+				return "#str_swf_vr_character_useheght4"; //Scale To Your Height
 			}
 			else
 			{
-				return "Custom eye height";
+				return "#str_swf_vr_character_useheght5"; //Custom eye height
 			}
 		}
 		case CHARACTER_OPTIONS_FIELD_SCALE:

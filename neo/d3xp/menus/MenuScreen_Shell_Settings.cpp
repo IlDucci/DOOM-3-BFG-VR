@@ -71,7 +71,7 @@ void idMenuScreen_Shell_Settings::Initialize( idMenuHandler* data )
 	option.Clear();
 
 	// Koz add vr options
-	option.Append( "VR Options" );	// Koz fixme VR options use dictionary strings instead of hard coding.
+	option.Append( "#str_swf_vr_vroptionstitle" );	// VR Options
 	menuOptions.Append(option);
 	option.Clear();
 	
@@ -92,7 +92,7 @@ void idMenuScreen_Shell_Settings::Initialize( idMenuHandler* data )
 	helpWidget->SetSpritePath( GetSpritePath(), "info", "helpTooltip" );
 	AddChild( helpWidget );
 	
-	const char* tips[] = { "#str_02166", "#str_02168", "#str_02170", "Customize VR settings.", "#str_swf_customize_3d" }; // Koz fixme add vr menus use dictionary.
+	const char* tips[] = { "#str_02166", "#str_02168", "#str_02170", "#str_swf_vr_vroptionsdesc", "#str_swf_customize_3d" }; // New hint for VR
 	
 	while( options->GetChildren().Num() < NUM_SETTING_OPTIONS )
 	{
