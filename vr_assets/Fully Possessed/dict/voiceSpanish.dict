@@ -10,7 +10,7 @@ numActions 29
 // the 6 phrases must be all be present and listed in this order.
 
 available "Los comandos disponibles son:"
-npc "Puedes decir lo que quieras a los NPC's"
+npc "Puedes decir lo que quieras a los NPC"
 cmds1 "Puedes usar comandos de voz o comandos del holodeck."
 cmds2 "Puedes usar comandos de voz, nombres de armas o comandos del holodeck."
 start "Empezó a escuchar."
@@ -50,16 +50,19 @@ action {
 action {
 
 	name PAUSE
-	entries 3
+	entries 6
 	"pause game"
 	"computer, freeze program"
 	"pausar partida"
+	"pausa"
+	"pausa la partida"
+	"para la partida"
 }
 
 action {
 
 	name RESUME
-	entries 7
+	entries 8
 	
 	"resume game"
 	"unpause game"
@@ -68,12 +71,13 @@ action {
 	"computer, run program"
 	"computer, continue program"
 	"continuar partida"
+	"continuar"
 }
 
 action {
 
 	name EXIT
-	entries 6
+	entries 8
 	
 	"exit game"
 	"computer, end program"
@@ -81,12 +85,14 @@ action {
 	"computer, program complete"
 	"computer, cancel program"
 	"abandonar juego"
+	"abandonar el juego"
+	"salir del juego"
 }
 
 action {
 
 	name TALK
-	entries 10
+	entries 12
 	
 	"hey"
 	"talk"
@@ -97,36 +103,47 @@ action {
 	"hola"
 	"habla"
 	"dime"
+	"buenas"
+	"saludos"
 	"adios"
 }
 
 action {
 
 	name MENU
-	entries 2
+	entries 4
 	
 	"menu"
 	"system"
+	"menú"
+	"sistema"
 }
 
 action {
 
 	name CANCEL
-	entries 2
+	entries 3
 	
 	"cancel"
 	"cancela"
+	"cancelar"
 }
 
 action {
 
 	name RESETVIEW
-	entries 4
+	entries 10
 	
 	"reset view"
 	"recenter view"
 	"reset HMD orientation"
 	"reset HMD view"
+	"reiniciar la vista"
+	"reiniciar vista"
+	"reinicia la vista"
+	"recentrar vista"
+	"recentrar la vista"
+	"recentra la vista"
 }
 
 action {
@@ -141,20 +158,22 @@ action {
 action {
 
 	name STOPRUNNING
-	entries 3
+	entries 4
 	
 	"stop running"
 	"start walking"
 	"andar"
+	"dejar de correr"
 }
 
 action {
 
 	name RELOAD
-	entries 2
+	entries 3
 	
 	"reload"
 	"recargar"
+	"recarga"
 }
 
 action {
@@ -183,7 +202,7 @@ action {
 action {
 
 	name CHAINSAW
-	entries 6
+	entries 7
 	
 	"chainsaw"
 	"beaver tooth"
@@ -191,6 +210,7 @@ action {
 	"mixom beaver tooth"
 	"mixom beaver tooth chainsaw"
 	"motosierra"
+	"sierra"
 }
 
 action {
@@ -207,13 +227,19 @@ action {
 action {
 
 	name GRABBER
-	entries 5
+	entries 11
 	
 	"grabber"
 	"ionized plasma levitator"
 	"IPL unit"
 	"gravity gun"
 	"agarradera"
+	"pistola antigravedad"
+	"arma antigravedad"
+	"levitador de plasma ionizado"
+	"LPI"
+	"gancho"
+	"pinza"
 }
 
 action {
@@ -241,7 +267,7 @@ action {
 action {
 
 	name SUPERSHOTGUN
-	entries 7
+	entries 9
 	
 	"super shotgun"
 	"double barreled shotgun"
@@ -250,6 +276,8 @@ action {
 	"super escopeta"
 	"superescopeta"
 	"escopeta de combate"
+	"escopeta de doble cañón"
+	"escopeta de dos cañones"
 }
 
 action {
@@ -269,7 +297,7 @@ action {
 action {
 
 	name CHAINGUN
-	entries 10
+	entries 11
 	
 	"chain gun"
 	"mach 2 chain gun"
@@ -281,6 +309,7 @@ action {
 	"superametralladora"
 	"rotativa"
 	"cañon de cadena"
+	"gatling"
 }
 
 action {
